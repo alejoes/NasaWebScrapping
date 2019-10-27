@@ -18,7 +18,7 @@
 <body>
 
 <div class="container jumbotron text-center"><h1>MISSION TO MARS</h1>
-    <button type="button" class="btn btn-primary">SCRAPE NEW DATA</button>
+    <p><a class="btn btn-primary" href="/scrape" role="button">SCRAPE NEW DATA</a></p>
 </div>
 
 <div class="container">
@@ -37,14 +37,11 @@
     <div class="row">
         <div class="container col-xs-12 col-md-8">
             <h3>Featured Mars Image</h3>
-            <div><img style="float: center; margin: 10px" src="https://www.jpl.nasa.gov//spaceimages/images/mediumsize/PIA16815_ip.jpg" class="img-fluid">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis optio veniam distinctio debitis 
-                tempora fuga, nam architecto deleniti! Deserunt similique, id tempora minus aut repudiandae?     
-            </div>
+            <div><img style="float: center; margin: 10px" src="{{mars.featured_image_url}}" class="img-fluid"></div>
         </div>
         <div class="container col-xs-4 col-md-4">
-            <div class="row"><h4>Current Weather in Mars</h4>
-                    
+            <div class="row jumbotron"><h4>Current Weather in Mars</h4>
+            <p>{{mars.mars_weather}}</p>       
                     
 
             </div>

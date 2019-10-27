@@ -7,7 +7,7 @@ from splinter import Browser
 
 
 def scraping():
-    scrape={}
+    scrape_dict={}
     urx="https://mars.nasa.gov/news/"
     html = requests.get(urx)
     bsobj = bs(html.content, "html.parser")
@@ -83,13 +83,27 @@ def scraping():
             d["img_url"]='https://astrogeology.usgs.gov' + result["href"]
             hemisphere_images_url.append(d.copy())
 
-    scrape['news_title']=news_title
-    scrape["news_p"]=news_p
-    scrape["featured_image_url"]=featured_image_url
-    scrape["mars_weather"]=mars_weather
-    scrape["html_table"]=html_table
-    scrape["hemisphere_images_url"]=hemisphere_images_url
-    return scrape
+    browser.quit()
 
-finalDict=scraping()
+    # scrape_dict['news_title']=news_title
+    # scrape_dict["news_p"]=news_p
+    # scrape_dict["featured_image_url"]=featured_image_url
+    # scrape_dict["mars_weather"]=mars_weather
+    # scrape_dict["html_table"]=html_table
+    # scrape_dict["hemisphere_images_url"]=hemisphere_images_url
+    
+    scrape_dict={
+        'news_title': news_title,
+        "news_p" :  news_p,
+        "featured_image_url" : featured_image_url,
+        "mars_weather" : mars_weather,
+        "html_table" : html_table,
+        "hemisphere_images_url" : hemisphere_images_url
+    }
+    return scrape_dict
+
+
+
+
+
 
