@@ -80,17 +80,11 @@ def scraping():
     hemisphere_images_url=[]
     for result in result_dict:
             d["title"]=result.find('h3').text
-            d["img_url"]='https://astrogeology.usgs.gov' + result["href"]
+            d["img_url"]='https://astrogeology.usgs.gov' + result.img["src"]
             hemisphere_images_url.append(d.copy())
 
     browser.quit()
-
-    # scrape_dict['news_title']=news_title
-    # scrape_dict["news_p"]=news_p
-    # scrape_dict["featured_image_url"]=featured_image_url
-    # scrape_dict["mars_weather"]=mars_weather
-    # scrape_dict["html_table"]=html_table
-    # scrape_dict["hemisphere_images_url"]=hemisphere_images_url
+    scrape_dict["hemisphere_images_url"]=hemisphere_images_url
     
     scrape_dict={
         'news_title': news_title,
@@ -102,7 +96,7 @@ def scraping():
     }
     return scrape_dict
 
-
+scraping()
 
 
 

@@ -1,0 +1,9 @@
+.icons{
+    display:inline-block; 
+   }
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+ }
